@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lieferando</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+</head>
+
+<body id="id-body" onload="render()">
+    <!-- HEADER -->
+    <div class="header">
+        <div class="header-alignment">
+            <img class="img-back" src="img/icons8-back-24.png">
+            <img class="img-home" src="img/icons8-home-page-24.png">
+            <img class="img-rectangle" src="img/icons8-rectangle-24.png">
+            <img class="img-cutlery" src="img/icons8-cutlery-30.png">
+            <b>Lieferando</b>.de
+        </div>
+        <div class="location">
+            Ihre Adresse...
+        </div>
+        <div class="header-alignment">
+            <img class="img-germany">
+            <img class="menuicon" src="img/icons8-menu-48 (2).png">
+        </div>
+    </div>
+
+    <!-- PAGE DIVIDER -->
+    <div class="page-left">
+
+        <!-- SUBHEADER -->
+        <div class="img-subheader">
+            <div class="img-logo">
+                <span class="text-hangrydragon">Hangry Dragon</span>
+                <img class="img-dragon" src="img/icons8-dragon-96.png">
+            </div>
+        </div>
+
+        <div class="spacebetween-menuheader">
+            <span class="h1">Hangry Dragon</span>
+            <div class="div-icons">
+                <img class="img-icon" src="img/icons8-information-60.png">
+                <img class="img-icon" src="img/favorite-3-48.png">
+            </div>
+        </div>
+
+        <div class="div-reviews">
+            <img class="img-star" src="img/icons8-star-100.png">
+            <img class="img-star" src="img/icons8-star-100.png">
+            <img class="img-star" src="img/icons8-star-100.png">
+            <img class="img-star" src="img/icons8-star-100.png">
+            <img class="img-star" src="img/icons8-star-half-empty-100.png">
+            <span>(962 Bewertungen)</span>
+        </div>
+
+        <!-- NAV BAR -->
+        <div class="div-navbar" style="top: 0;" id="navbar">
+            <img class="img-navbar" src="img/search-13-48.png">
+            <img class="img-navbar" src="img/arrow-89-48.png" onclick="swipeLeft()">
+            <div class="div-slider">
+                <div id="div-slider" class="div-slidercontent">
+                </div>
+            </div>
+            <img class="img-navbar" src="img/arrow-25-48.png" onclick="swipeRight()">
+        </div>
+
+        <!-- MENU -->
+        <div id="div-menu" style="padding: 0px 30px">
+        </div>
+    </div>
+
+    <!-- BASKET EMPTY -->
+    <div class="div-basket" id="basket">
+        <div class="h1-basket">
+            Warenkorb
+        </div>
+        <div id="orders">
+        </div>
+        <div class="dividing-line">
+        </div>
+        <div id="calculator" class="div-calculator">
+            <div class="div-calculatorrowleft">
+                <p>Zwischensumme</p>
+                <p>Lieferkosten</p>
+                <p><b>Gesamt</b></p>
+                <br>
+                <p id="text-minimum" class="text-basketgreen">Benötigter Betrag, um den <br> Mindestbestellwert zu
+                    erreichen:</p>
+            </div>
+            <div id="pricescalculator" class="div-calculatorrow">
+                <p>0,00 €</p>
+                <p>0,00 €</p>
+                <p><b>0,00 €</b></p>
+                <br>
+                <p id="price-minimum" class="text-basketgreen">10,00 €</p>
+            </div>
+        </div>
+        <div class="dividing-line">
+        </div>
+        <div class="if-minimum">
+            <div id="div-minimum">
+                <p id="text2-minimum" class="text-orderinfo">Leider kannst du noch nichts bestellen. <br>Hangry Dragon
+                    liefert erst ab einem
+                    <br>Mindestbestellwert von 10,00 € (exkl. Lieferkosten).
+                </p>
+                <div id="btn-order" class="btn-order">
+                    Bestellen
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <a href="pictures.html" class="text-footer">Bilder Herkunft</a>
+    </div>
+    
+    <!-- BTN SCROLL TO TOP -->
+    <img onclick="scrollToTop()" src="img/icons8-up-squared-30.png" class="img-totop d-none" id="id-scollToTop">
+
+    <!-- BASKET  RESPONSIVE -->
+    <div class="div-overBasketResponsive">
+        <div class="div-basketResponsive" onclick="basketResponsive()">
+            <p id="id-basketResponsive">Warenkorb (0,00 €)</p>
+        </div>
+    </div>
+
+    <div id="id-basketResponsiveFullscreen" class="div-basketResponsiveFullscreen d-none">
+        <div class="div-basketResponsiveFullscreenHeader">
+            <b>Warenkorb</b>
+            <img onclick="closeWindow()" src="img/close-window-32.png" class="img-closeWindow">
+        </div>
+        <div id="id-basketResponsiveOrders">
+        </div>
+        <div class="dividing-line">
+        </div>
+        <div class="div-calculatorResponsivebasket">
+            <div style="display: flex; flex-direction: column;">
+                <p style="padding: 5px">Zwischensumme</p>
+                <p style="padding: 5px">Lieferkosten</p>
+                <p style="padding: 5px"><b>Gesamt</b></p>
+                <p id="text-minimum1" class="text-basketgreen">Benötigter Betrag, um den Mindestbestellwert zu
+                    erreichen:</p>
+            </div>
+            <div id="id-calculatorResponsive">
+            </div>
+        </div>
+        <div class="dividing-line">
+        </div>
+        <div class="if-minimum">
+            <div id="div-minimum">
+                <p id="text2-minimum" class="text-orderinfo">Leider kannst du noch nichts bestellen. <br>Hangry Dragon
+                    liefert erst ab einem Mindestbestellwert von 10,00 € (exkl. Lieferkosten).
+                </p>
+                <div class="div-basketResponsiveBtn">
+                    <div id="btn-order1" class="btn-orderResponsive">
+                        Bestellen
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
